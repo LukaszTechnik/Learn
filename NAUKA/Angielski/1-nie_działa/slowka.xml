@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<words>
+    <word>
+        <polish>kot</polish>
+        <english>cat</english>
+    </word>
+    <word>
+        <polish>pies</polish>
+        <english>dog</english>
+    </word>
+    <!-- Dodaj więcej słówek tutaj -->
+</words>

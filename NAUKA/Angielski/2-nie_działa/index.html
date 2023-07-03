@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ANG-test</title>
+</head>
+<body>
+    <h1>Nauka ANG-test</h1>
+    <div>
+        <h2>Jak brzmi to słowo po angielsku?</h2>
+        <p id="polishWord"></p>
+        <input type="text" id="answer" placeholder="Wprowadź odpowiedź">
+        <button onclick="checkAnswer()">Sprawdź</button>
+        <p id="result"></p>
+        <button onclick="showNextWord()">Następne słowo</button>
+    </div>
+
+    <script>
+        var words = [
+            { polish: "kot", english: "cat" },
+            { polish: "pies", english: "dog" },
+            { polish: "dom", english: "house" },
+            { polish: "samochód", english: "car" },
+            // Dodaj więcej słówek tutaj
+        ];
+
+        var currentIndex = 0;
+
+        function showNextWord() {
+            var word = words[currentIndex];
+            $("#polishWord").text(word.polish);
+            $("#answer").val("");
+            $("#answer").focus();
+            $("#result").text("");
+        }
+
+        function checkAnswer() {
+            var word = words[currentIndex];
+            var userAnswer = $("#answer").val().toLowerCase();
+            if (userAnswer === word.english.toLowerCase()) {
+                $("#result").text("Poprawna odpowiedź!");
+            } else {
+                $("#result").text("Błędna odpowiedź. Poprawne tłumaczenie to: " + word.english);
+            }
+        }
+
+        showNextWord();
+    </script>
+</body>
+</html>

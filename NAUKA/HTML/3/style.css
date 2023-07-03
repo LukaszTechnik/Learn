@@ -1,0 +1,143 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #303030;
+    font-size:20px;
+    color:#ffffff
+}
+#container{
+    width:1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rectangle{
+    width: 960px;
+    margin: 20px;
+}
+.square{
+    width: 50%;
+    float:left;
+}
+#logo{
+    float:left;
+    font-family: 'Lato', sans-serif;
+    font-size:70px;
+    width: 600px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    text-align:left;
+}
+#zegar{
+    width: auto;
+    float:left;
+    font-family: 'Lato', sans-serif;
+    font-size:70px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    text-align:center;
+}
+.tile1{
+    float:left;
+    margin: 10px;
+    width:230px;
+    height: 142px ;
+    background-color:#3095d3;
+    text-align:center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+.tile1:hover{
+    background-color:#204861; 
+    cursor:pointer;
+}
+.tile2{
+    float:left;
+    margin: 10px;
+    width:230px;
+    height: 142px ;
+    background-color:#666666;
+}
+.tile2:hover{
+    background-color:#303030;
+    cursor:pointer;
+}
+.tile3{
+    float:left;
+    margin: 10px;
+    width:230px;
+    height: 142px ;
+    background-color:#93c748;
+}
+.tile3:hover{
+    background-color:#54712b;
+    cursor:pointer;
+}
+.tile4{
+    font-family: 'Lato', sans-serif;
+    font-size:29px;
+    text-align:center;
+    margin: 10px;
+    width: 480px;
+    height: 142px ;
+    background-color:#d15f0d;
+}
+.tile5{
+    margin:10px;
+    width: 460px;
+    height: 284px;
+    background-color:#666666;
+    text-align:justify;
+    padding:10px;
+    font-size:18px
+}
+.YT{
+    margin:10px;
+    float:left;
+    width: 105px;
+    height: 142px;
+    background-color:#ad2929;
+    text-align:center;
+}
+.YT:hover{
+    background-color:#6b1d1d;
+    cursor:pointer;
+}
+.FB{
+    margin:10px;
+    float:left;
+    width: 105px;
+    height:142px;
+    background-color:#293dad;
+    text-align:center;
+}
+.FB:hover{
+    background-color:#182257;
+    cursor:pointer;
+}
+.G{
+    margin:10px;
+    float:left;
+    width: 105px;
+    height:142px;
+    background-color:#ad2929;
+    text-align:center;
+}
+.G:hover{
+    background-color:#571919;
+    cursor:pointer;
+}
+.TW{
+    margin:10px;
+    float:left;
+    width: 105px;
+    height:142px;
+    background-color:#0e98c2;
+    text-align:center;    
+}
+.TW:hover{
+    background-color:#0e5266;
+    cursor:pointer;
+}
+a{
+    color:#ffffff;
+    text-decoration:none;
+}

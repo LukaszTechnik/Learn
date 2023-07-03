@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nauka słówek</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var words;
+
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "slowka.xml",
+                dataType: "xml",
+                success: function(xml) {
+                    words = $(xml).find("word");
+                    showNextWord();
+                },
+                error: function(xhr, status, error) {
+                    alert("Wystąpił błąd podczas wczytywania pliku XML.");
+                }
+            });
+        });
+
+        function showNextWord() {
+            var randomIndex = Math.floor(Math.random() * words.length);
+            var word = $(words[randomIndex]);
+
+            var polishWord = word.find("polish").text();
+            var englishWord = word.find("english").text();
+
+            $("#polishWord").text(polishWord);
+            $("#answer").val("");
+            $("#answer").focus();
+            $("#correctAnswer").text("");
+
+            $("#checkButton").click(function() {
+                var userAnswer = $("#answer").val();
+                if (userAnswer.toLowerCase() === englishWord.toLowerCase()) {
+                    $("#correctAnswer").text("Poprawna odpowiedź!");
+                } else {
+                    $("#correctAnswer").text("Błędna odpowiedź. Poprawne tłumaczenie to: " + englishWord);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Nauka słówek po angielsku</h1>
+    <div>
+        <h2>Jak brzmi to słowo po angielsku?</h2>
+        <p id="polishWord"></p>
+        <input type="text" id="answer" placeholder="Wprowadź odpowiedź">
+        <button id="checkButton">Sprawdź</button>
+        <p id="correctAnswer"></p>
+        <button onclick="showNextWord()">Następne słowo</button>
+    </div>
+</body>
+</html>

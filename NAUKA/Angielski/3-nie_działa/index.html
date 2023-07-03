@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nauka słówek</title>
+</head>
+<body>
+    <h1>Nauka słówek po angielsku</h1>
+    <div>
+        <h2>Jak brzmi to słowo po angielsku?</h2>
+        <p id="polishWord"></p>
+        <input type="text" id="answer" placeholder="Wprowadź odpowiedź">
+        <button id="checkButton">Sprawdź</button>
+        <p id="correctAnswer"></p>
+        <button onclick="showNextWord()">Następne słowo</button>
+        <button onclick="addNewWord()">Dodaj nowe słowo</button>
+    </div>
+
+    <script>
+        var words = [
+            { polish: "kot", english: "cat" },
+            { polish: "pies", english: "dog" },
+            // Dodaj więcej słówek tutaj
+        ];
+
+        var currentIndex = 0;
+
+        function showNextWord() {
+            if (currentIndex >= words.length) {
+                alert("Udało Ci się przejść wszystkie słówka!");
+                return;
+            }
+
+            var word = words[currentIndex];
+
+            var polishWord = word.polish;
+            var englishWord = word.english;
+
+            $("#polishWord").text(polishWord);
+            $("#answer").val("");
+            $("#answer").focus();
+            $("#correctAnswer").text("");
+
+            $("#checkButton").click(function() {
+                var userAnswer = $("#answer").val();
+                if (userAnswer.toLowerCase() === englishWord.toLowerCase()) {
+                    $("#correctAnswer").text("Poprawna odpowiedź!");
+                } else {
+                    $("#correctAnswer").text("Błędna odpowiedź. Poprawne tłumaczenie to: " + englishWord);
+                }
+            });
+
+            currentIndex++;
+        }
+
+        function addNewWord() {
+            var polishWord = prompt("Podaj słowo po polsku:");
+            var englishWord = prompt("Podaj tłumaczenie słowa po angielsku:");
+
+            if (polishWord && englishWord) {
+                words.push({ polish: polishWord, english: englishWord });
+                alert("Dodano nowe słowo!");
+            } else {
+                alert("Nie podano odpowiednich danych. Spróbuj ponownie.");
+            }
+        }
+    </script>
+</body>
+</html>

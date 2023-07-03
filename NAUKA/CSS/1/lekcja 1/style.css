@@ -1,0 +1,30 @@
+body{
+    background-color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: rgb(68, 181, 51);    
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 48px;
+    color: cornflowerblue;
+}
+#test{
+    color: rgb(230, 43, 43);
+}
+#test2{
+    color: aliceblue;
+}
+#klasaTestowa{
+    color: black;
+}
+a:link{ 
+    color: aqua;
+}
+a:visited{
+    color:black
+}
+a:hover{
+    color: brown;
+}
