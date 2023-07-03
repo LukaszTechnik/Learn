@@ -1,0 +1,14 @@
+//Napisz skrypt wyznaczający sume cyfr podanej liczby
+
+let liczba=234567;
+liczba=parseInt(promt("Podaj liczbę:"));
+liczba1=liczba;
+let suma=0;
+let r=0;
+while (liczba>1){
+    r=liczba%10;
+    suma+=r;
+    liczba=parseInt(liczba/10);
+}
+console.log(suma);
+alert("Suma cyfr liczby"+liczba+"wynosi: "+suma); 

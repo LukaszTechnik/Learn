@@ -1,0 +1,70 @@
+<!--
+1. pobrać przycisk i podpiąc do nieo nasłuchiwanie na click
+2. zadeklarować funkcję
+3. w funkcji stworzyć element html (div)
+4. dodać div do strony
+5. stworzyc licznik i uzupełnić zawartość elementu div o wartość licznika
+6. za pomocą instrukcji warunkowej stwierdzic czy dany element jest 5, jeśli tak nadać mu inną klasę
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body button {
+            display: block;
+            margin:20px auto;
+            float: left;
+            
+        }
+        div{
+            width:40px;
+            height: 40px;
+            background-color: cornflowerblue;
+            margin: 5px;
+            float: left;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border: 2px solid red;
+        }
+
+        .circle{
+            background-color: white;
+            border-radius: 50%;
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+<body>
+    <button id="add">Utwórz element</button>
+    <button id="sub">Usuń element</button>
+    <div style="float:none; height: 100px; visibility: hidden;"></div>
+    <script>
+        const btn1 = document.getElementById("add");
+        const btn2 = document.getElementById("sub");
+        let number=1;
+        const addElement = function(){
+            const div=document.createElement('div');
+            div.textContent=number;
+            if (number%5==0) div.classList.add("circle");
+            document.body.appendChild(div);
+            number++;
+            console.log(number);
+        }
+
+        const subElement = function(){
+
+        }
+
+        btn1.addEventListener('click',addElement);
+        btn2.addEventListener('click',subElement);
+    </script>
+</body>
+</html>
